@@ -748,8 +748,8 @@ class TransFusionHead(nn.Module):
         self._init_assigner_sampler()
 
         # Position Embedding for Cross-Attention, which is re-used during training
-        x_size = self.test_cfg['grid_size'][0] // self.test_cfg['out_size_factor']
-        y_size = self.test_cfg['grid_size'][1] // self.test_cfg['out_size_factor']
+        x_size = self.test_cfg['grid_size'][1] // self.test_cfg['out_size_factor']
+        y_size = self.test_cfg['grid_size'][0] // self.test_cfg['out_size_factor']
         self.bev_pos = self.create_2D_grid(x_size, y_size)
 
         self.img_feat_pos = None
